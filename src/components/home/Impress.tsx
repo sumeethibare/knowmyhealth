@@ -10,9 +10,8 @@ const Impress = () => {
                         AI powered consumer <span className='text-green-500 font-serif italic font-normal'>health</span> Platform
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Introducing our cutting-edge SecureCloud Backup Solution, the ultimate safeguard for your critical data.
-                        In today's rapidly evolving IT landscape, data security and disaster recovery have never been more
-                        crucial.
+                        Introducing our cutting-edge Solution, the ultimate safeguard for health and wellbeing.
+                        In todays rapidly evolving health sector, we take the peoples health as a serious concern and help them.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <a
