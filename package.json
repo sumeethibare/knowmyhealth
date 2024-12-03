@@ -1,6 +1,6 @@
 {
-  "name": "kinde-nextjs-app-router-starter-kit",
-  "version": "0.1.0",
+  "name": "project-know-my-health",
+  "version": "1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -8,7 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@kinde-oss/kinde-auth-nextjs": "^2.3.10",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@kinde-oss/kinde-auth-nextjs": "^2.4.6",
     "@types/node": "20.11.5",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",

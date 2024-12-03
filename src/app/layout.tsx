@@ -3,7 +3,7 @@ import Base from "@/components/footer/Base";
 import './globals.css'
 export const metadata = {
   title: "Know My Health",
-  description: "Take Care Of Yourself",
+  description: "Enhance Your Lifestyle",
 };
 
 export default function RootLayout({
