@@ -31,9 +31,10 @@ export default function Drawer({ user }: DrawerProps) {
     const menuItems: MenuItem[] = [
         { label: 'Home', href: '/' },
         { label: 'Profile', href: '/profile' },
-        { label: 'Fingertips', href: '/fingertips' },
-        { label: 'Surgery', href: '/surgery' },
-        { label: 'Health Plans', href: '/health' },
+        { label: 'Diagnostics', href: '/diagnostics' },
+        // { label: 'Fingertips', href: '/fingertips' },
+        // { label: 'Surgery', href: '/surgery' },
+        // { label: 'Health Plans', href: '/health' },
         { label: 'Log Out', isLogout: true },
     ];
 

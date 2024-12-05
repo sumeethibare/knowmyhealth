@@ -1,11 +1,12 @@
 import Minigate from "@/components/navigate/Minigate"
-import Soon from "@/components/utils/Soon";
+import User from "@/components/profile/User";
+
 
 export default function Dashboard() {
   return (
     <>
       <Minigate />
-      <Soon/>
+      <User/>
     </>
   );
 }

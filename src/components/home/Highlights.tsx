@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Docone from '/public/images/docone.png';
-import Doctwo from '/public/images/doctwo.png'
-import Docthree from '/public/images/docthree.png'
+import home1 from '/public/images/homefeatures/docone.png';
+import home2 from '/public/images/homefeatures/doctwo.png'
+import home3 from '/public/images/homefeatures/docthree.png'
 
 const highlighting = [
     {
@@ -9,7 +9,7 @@ const highlighting = [
         name: 'Find Doctors Near You',
         sub:'get confirmed appointments',
         href: '#',
-        imageSrc: Docone,
+        imageSrc: home1,
         imageAlt: "Find Doctors Near You",
     },
     {
@@ -17,34 +17,33 @@ const highlighting = [
         name: 'Surgeries',
         sub:'safe & trusted surgery centers',
         href: '#',
-        imageSrc: Doctwo,
+        imageSrc: home2,
         imageAlt: "Find Doctors Near You",
     },
     {
         id: 3,
-        name: 'Online Consultation',
+        name: 'Consultation',
         sub:'get instant treatment',
         href: '#',
-        imageSrc: Docthree,
+        imageSrc: home3,
         imageAlt: "Find Doctors Near You",
     },
 ];
 
 export default function Highlights() {
     return (
-        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-14 lg:max-w-7xl lg:px-8">
-                   <h2 className="text-2xl font-semibold tracking-tight text-gray-900">Consult Top Doctors for any Health Concern</h2>
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 {highlighting.map((list) => (
                     <div key={list.id} className="group relative">
                         <Image
                             alt={list.imageAlt}
                             src={list.imageSrc}
-                            width={300}
-                            height={300}
-                            className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                            width={3000}
+                            height={3000}
+                            className="w-full rounded-md group-hover:opacity-75 aspect-auto lg:h-80"
                         />
-                        <div className="mt-4 flex justify-between">
+                        {/* <div className="mt-4 flex justify-between">
                             <div>
                                 <h3 className="font-medium text-gray-700">
                                     <a href={list.href}>
@@ -54,7 +53,7 @@ export default function Highlights() {
                                 </h3>
                                 <p className="text-sm">{list.sub}</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>
