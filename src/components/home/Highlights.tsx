@@ -28,6 +28,14 @@ const highlighting = [
         imageSrc: home3,
         imageAlt: "Find Doctors Near You",
     },
+    {
+        id: 1,
+        name: 'Find Doctors Near You',
+        sub:'get confirmed appointments',
+        href: '#',
+        imageSrc: home1,
+        imageAlt: "Find Doctors Near You",
+    },
 ];
 
 export default function Highlights() {

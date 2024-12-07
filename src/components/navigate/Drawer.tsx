@@ -31,7 +31,7 @@ export default function Drawer({ user }: DrawerProps) {
     const menuItems: MenuItem[] = [
         { label: 'Home', href: '/' },
         { label: 'Profile', href: '/profile' },
-        { label: 'Diagnostics', href: '/diagnostics' },
+        { label: 'Lab tests & Diagnostics', href: '/diagnostics' },
         // { label: 'Fingertips', href: '/fingertips' },
         // { label: 'Surgery', href: '/surgery' },
         // { label: 'Health Plans', href: '/health' },

@@ -1,12 +1,12 @@
-import Minigate from "@/components/navigate/Minigate"
+import Homegate from "@/components/navigate/Homegate";
 import User from "@/components/profile/User";
 
 
 export default function Dashboard() {
   return (
     <>
-      <Minigate />
-      <User/>
+      <Homegate />
+      <User />
     </>
   );
 }

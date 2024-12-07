@@ -1,4 +1,4 @@
-import Minigate from '@/components/navigate/Minigate'
+import Homegate from '@/components/navigate/Homegate'
 import Soon from '@/components/utils/Soon'
 import React from 'react'
 
@@ -6,7 +6,7 @@ function page() {
   return (
   <>
 <>
-<Minigate/>
+<Homegate/>
 <Soon/>
 </>
   </>
