@@ -1,50 +1,93 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { jsPDF } from 'jspdf';
 
 const PaymentPage = () => {
-  const [paymentMethod, setPaymentMethod] = useState('Cash on Delivery');
+  const [paymentMethod, setPaymentMethod] = useState<'Pay After Treatment' | 'Pay Online' | null>('Pay After Treatment');
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
+  const [selectedTest, setSelectedTest] = useState<any>(null);
+  const [selectedPrice, setSelectedPrice] = useState<number | string>('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedScanType, setSelectedScanType] = useState<string | undefined>('');
+
+  useEffect(() => {
+    // Retrieve the selected test details, price, scan type, and date from localStorage
+    const test = JSON.parse(localStorage.getItem('selectedTest') || 'null');
+    const price = JSON.parse(localStorage.getItem('selectedPrice') || '""');
+    const date = JSON.parse(localStorage.getItem('selectedDate') || '""');
+    
+    // Safely retrieve scan type, set default to empty string if it's null or undefined
+    const scanType = localStorage.getItem('selectedScanType') || '';
+    
+    if (test) setSelectedTest(test);
+    if (price) setSelectedPrice(price);
+    if (date) setSelectedDate(date);
+    if (scanType) setSelectedScanType(scanType);
+  }, []);
 
   const downloadReceipt = () => {
-    const doc = new jsPDF();
-    doc.text('Booking Receipt', 20, 20);
-    doc.text('Diagnostic Test: MRI', 20, 30);
-    doc.text('Location: Bangalore, Center A', 20, 40);
-    doc.text('Time: 10:00 AM', 20, 50);
-    doc.text('Price: ₹3000', 20, 60);
-    doc.text('Payment Method: Cash on Delivery', 20, 70);
-    doc.text('Booking Date: 2024-12-05', 20, 80);
+    if (selectedTest && selectedPrice && selectedDate && selectedScanType) {
+      const doc = new jsPDF();
+      doc.text('Booking Receipt', 20, 20);
+      doc.text(`Diagnostic Test: ${selectedTest.name}`, 20, 30);
+      doc.text(`Scan Type: ${selectedScanType}`, 20, 40); // Display the scan type
+      doc.text(`Location: ${selectedTest.address}`, 20, 50);
+      doc.text(`Price: ₹${selectedPrice}`, 20, 60);
+      doc.text(`Payment Method: ${paymentMethod}`, 20, 70); // Use the selected payment method
+      doc.text(`Booking Date: ${selectedDate}`, 20, 80);
 
-    doc.save('receipt.pdf');
+      doc.save('receipt.pdf');
+    }
   };
 
   const handlePayment = () => {
-    if (paymentMethod !== 'Cash on Delivery') {
-      alert('Only Cash on Delivery is available.');
-      return;
+    if (paymentMethod === 'Pay After Treatment') {
+      setIsBookingConfirmed(true);
+      alert('Booking confirmed!');
+    } else if (paymentMethod === 'Pay Online') {
+      // Redirect to Razorpay link
+      window.location.href = 'https://razorpay.me/@knowmyhealth';
+    } else {
+      alert('Please select a payment method.');
     }
-    setIsBookingConfirmed(true);
-    alert('Booking confirmed!');
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">Payment</h1>
+    <div className="p-2 max-w-xl mx-auto py-20">
+      <h1 className="text-3xl font-semibold text-center mb-6">Choose Payment Mode</h1>
       <div className="space-y-4">
-        <div
-          className={`p-4 border ${
-            paymentMethod === 'Cash on Delivery' ? 'border-primary' : 'border-gray-300'
-          } rounded-lg cursor-not-allowed`}
-        >
-          Cash on Delivery
+        {/* Payment Option Selector */}
+        <div className="flex flex-col space-y-2">
+          <label className="flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="Pay After Treatment"
+              checked={paymentMethod === 'Pay After Treatment'}
+              onChange={() => setPaymentMethod('Pay After Treatment')}
+              className="mr-2 radio checked:bg-red-500"
+            />
+            <span>Pay After Treatment</span>
+          </label>
+          <label className="flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="Pay Online"
+              checked={paymentMethod === 'Pay Online'}
+              onChange={() => setPaymentMethod('Pay Online')}
+              className="mr-2 radio checked:radio-error"
+            />
+            <span>Pay Online (Razorpay)</span>
+          </label>
         </div>
       </div>
+      
       <button
         className="mt-6 btn btn-primary w-full"
         onClick={handlePayment}
-        disabled={paymentMethod !== 'Cash on Delivery'}
+        disabled={!paymentMethod}
       >
         Confirm Payment
       </button>

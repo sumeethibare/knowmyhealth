@@ -1,12 +1,12 @@
+import { getUserData } from "../../helpers/getUserData";
+import User from "../../components/profile/User";
 import Homegate from "@/components/navigate/Homegate";
-import User from "@/components/profile/User";
 
+export default async function UserPage() {
+  const userData = await getUserData();
 
-export default function Dashboard() {
-  return (
-    <>
-      <Homegate />
-      <User />
-    </>
-  );
+  return <>
+  <Homegate/>
+  <User userData={userData} />
+  </>;
 }

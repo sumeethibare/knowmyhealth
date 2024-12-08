@@ -30,13 +30,12 @@ const Base = () => {
     <footer className="bg-zinc-50">
 
       <div className="container mx-auto p-0 md:p-8 xl:px-0">
-      <p className='text-4xl font-semibold px-10 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-cyan-500 '>what our users <br></br> have to say</p>
-      
-      <img src='/public/images/design.svg' className='h-10'/>
-      
+
         <div className="mx-auto max-w-7xl px-6 pb-10 pt-16">
-          
+        <p className='text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-cyan-500 pb-10'>what our users <br></br> have to say</p>
+      
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+            
             <div className="space-y-4">
               <div>
                 <a href="/">
