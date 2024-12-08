@@ -12,7 +12,7 @@ const PromotionOne = () => {
     ];
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto py-16 border-blue-200 border-t-2">
+        <div className="flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto py-16">
             <div className="w-full p-2 md:w-2/6 h-80 bg-zinc-200 text-primary-foreground rounded-full mb-4 md:mb-0 flex flex-col items-center justify-center text-center">
                 <h1 className="text-xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-cyan-500">Give the care your family deserves</h1>
                 <p className='text-medium pb-2'>Unlimited Consultations with top Doctors for 6 family members in 22+ specialities and 16 languages</p>

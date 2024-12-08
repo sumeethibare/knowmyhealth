@@ -13,7 +13,7 @@ export default function Home() {
       <Highlights />
       <PropOne />
       <PromotionOne />
-      <PromotionTwo/>
+      {/* <PromotionTwo/> */}
     </>
   );
 }
