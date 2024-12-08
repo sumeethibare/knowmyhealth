@@ -29,7 +29,10 @@ export default async function Navigate() {
   return (
     <nav className="flex items-center justify-between lg:p-6 px-3">
 
-      <Image src={Logo} width={1000} height={1000} className="lg:h-36 h-24 w-auto" alt="know my health" />
+      <div className="flex items-center lg:flex-row flex-col">
+        <a href="/"><Image src={Logo} width={1000} height={1000} className="lg:h-36 h-24 w-auto" alt="know my health" /></a>
+        <p className="text-xs lg:text-lg">Know My Health</p>
+      </div>
 
       {/* the desktop code */}
       <div className=' gap-4 lg:flex hidden flex-wrap bg-zinc-100 lg:p-2 rounded-2xl'>

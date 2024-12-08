@@ -6,3 +6,36 @@
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }
+
+@keyframes slideInX {
+    0% {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInY {
+    0% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-anim {
+    animation: slideInX 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  @media (max-width: 1024px) {
+    .modal-anim {
+      animation: slideInY 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+  

@@ -3,17 +3,16 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Homegate from '@/components/navigate/Homegate';
-import { tests, DiagnosticTest } from './data'; // Import the data
-import { motion } from 'framer-motion';
+import { tests, DiagnosticTest } from './data';
 
-const DiagnosticsPage = () => {
+const LabTestsPage = () => {
   const [selectedTest, setSelectedTest] = useState<DiagnosticTest | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [locationQuery, setLocationQuery] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
-  const [selectedPrice, setSelectedPrice] = useState<number | string>(''); // Stores selected price
+  const [selectedPrice, setSelectedPrice] = useState<number | string>('');
 
-  const modalRef = useRef<HTMLDivElement>(null); // Reference to the modal container
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const filteredTests = tests.filter((test) => {
     return (
@@ -58,7 +57,7 @@ const DiagnosticsPage = () => {
         <div className="flex mb-6">
           <input
             type="text"
-            placeholder="Search Diagnostics"
+            placeholder="Search Lab Tests"
             className="input input-bordered w-full max-w-xs mr-4"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -96,14 +95,14 @@ const DiagnosticsPage = () => {
         </div>
 
         {selectedTest && (
-           <div
-           id="modal"
-           className="fixed inset-0 bg-black bg-opacity-50 flex lg:items-center items-end lg:justify-end justify-center z-50 modal-anim"
-         >
-           <div
-             ref={modalRef}
-             className="bg-white p-6 rounded-none shadow-lg max-w-lg w-full lg:h-screen lg:w-4/12 lg:right-0 lg:top-0 lg:justify-between lg:flex lg:flex-col"
-           >
+          <div
+            id="modal"
+            className="fixed inset-0 bg-black bg-opacity-50 flex lg:items-center items-end lg:justify-end justify-center z-50 modal-anim"
+          >
+            <div
+              ref={modalRef}
+              className="bg-white p-6 rounded-none shadow-lg max-w-lg w-full lg:h-screen lg:w-4/12 lg:right-0 lg:top-0 lg:justify-between lg:flex lg:flex-col"
+            >
               <div className="flex flex-col md:flex-row gap-4">
                 <Image
                   src={selectedTest.image}
@@ -136,26 +135,28 @@ const DiagnosticsPage = () => {
                   <div className="mt-4">
                     <input
                       type="date"
-                      className="input input-bordered w-full"
+                      className="input input-bordered w-full sm:w-full md:w-full lg:w-full"
                       value={selectedDate}
                       onChange={(e) => setSelectedDate(e.target.value)}
                     />
                   </div>
                 </div>
               </div>
-              <button
-                className="mt-4 btn btn-primary w-full"
-                onClick={handleBooking}
-                disabled={!selectedPrice || !selectedDate} // Disable button if no price or date selected
-              >
-                Book Now
-              </button>
-              <button
-                className="mt-2 btn btn-outline w-full"
-                onClick={() => setSelectedTest(null)}
-              >
-                Cancel
-              </button>
+              <div>
+                <button
+                  className="mt-4 btn btn-primary w-full"
+                  onClick={handleBooking}
+                  disabled={!selectedPrice || !selectedDate}
+                >
+                  Book Now
+                </button>
+                <button
+                  className="mt-2 btn btn-outline w-full"
+                  onClick={() => setSelectedTest(null)}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -164,4 +165,4 @@ const DiagnosticsPage = () => {
   );
 };
 
-export default DiagnosticsPage;
+export default LabTestsPage;

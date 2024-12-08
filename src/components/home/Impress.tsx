@@ -68,7 +68,7 @@ const Impress = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-        }, 3000);
+        }, 4000);
         return () => clearInterval(interval);
     }, []);
 
@@ -76,7 +76,7 @@ const Impress = () => {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row">
-                <div className="relative w-full lg:w-4/6 h-72 lg:h-[28rem] rounded-3xl overflow-hidden">
+                <div className="relative w-full lg:w-4/6 h-72 lg:h-[28rem] overflow-hidden">
                     {carouselImages.map((image, index) => (
                         <Image
                             key={index}
@@ -84,7 +84,7 @@ const Impress = () => {
                             width={700}
                             height={700}
                             alt="carousel image"
-                            className={`absolute w-full h-full transition-opacity duration-500 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                            className={`absolute w-full h-full duration-300 transition-all ${index === currentSlide ? "opacity-100" : "opacity-0"
                                 }`}
                         />
                     ))}
@@ -142,11 +142,11 @@ const Impress = () => {
                 <div className="mt-10 flex items-center justify-center lg:justify-start gap-x-6">
                     <a
                         href="/profile"
-                        className="rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+                        className=" bg-zinc-900 btn lg:hover:scale-125 lg:hover:skew-x-2 lg:hover:-rotate-6 text-sm font-semibold text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
                     >
                         Get Started
                     </a>
-                    <a href="/about" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="/about" className="text-md font-semibold leading-6 text-gray-900">
                         About Us <span>→</span>
                     </a>
                 </div>

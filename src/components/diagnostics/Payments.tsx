@@ -63,17 +63,6 @@ const PaymentPage = () => {
             <input
               type="radio"
               name="paymentMethod"
-              value="Pay After Treatment"
-              checked={paymentMethod === 'Pay After Treatment'}
-              onChange={() => setPaymentMethod('Pay After Treatment')}
-              className="mr-2 radio checked:bg-red-500"
-            />
-            <span>Pay After Treatment</span>
-          </label>
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="radio"
-              name="paymentMethod"
               value="Pay Online"
               checked={paymentMethod === 'Pay Online'}
               onChange={() => setPaymentMethod('Pay Online')}

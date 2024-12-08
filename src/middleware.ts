@@ -8,5 +8,5 @@ export default function middleware(req: Request) {
 }
 
 export const config = {
-  matcher: ["/profile", "/appointments","/health","/surgery","/wellness","/medicine","/diagnostics","/dental"],
+  matcher: ["/diagnostics","/medicine","/appointments","/surgery","/dental","/lab","/profile","/payment"],
 };
