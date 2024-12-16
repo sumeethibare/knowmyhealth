@@ -3,14 +3,14 @@ import { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { diseases } from "./treatment";
 import { doctors } from "./doctors";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 // Define types for disease and doctor
 interface Disease {
     id: number;
     name: string;
     description: string;
-    location: string;
+    image: StaticImageData | string;
 }
 
 interface Doctor {
@@ -48,14 +48,24 @@ const OnlineConsultation = () => {
                 {diseases.map((disease) => (
                     <div
                         key={disease.id}
-                        className="bg-white lg:hover:bg-emerald-600 lg:hover:text-white hover:duration-500 duration-300 rounded-none shadow-lg p-6 text-center cursor-pointer hover:shadow-xl transition-all lg:hover:shadow-2xl transform lg:hover:scale-110"
+                        className="rounded-none shadow-lg p-4 text-center cursor-pointer hover:shadow-xl transition-all transform lg:hover:scale-110"
                         onClick={() => openModal(disease)}
                     >
-                        <h2 className="text-xl font-semibold">{disease.name}</h2>
-                        <p>{disease.description}</p>
+                        <div className="w-full h-48 overflow-hidden">
+                            <Image
+                                src={disease.image}
+                                alt={disease.name}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div className="p-4">
+                            <h2 className="text-xl font-semibold">{disease.name}</h2>
+                            <p>{disease.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>
+
 
             {/* Modal */}
             <dialog id="option_enabled" className="modal">
@@ -73,12 +83,12 @@ const OnlineConsultation = () => {
                         <p className="mb-6 text-gray-600">{selectedDisease?.description}</p>
 
                         {/* <h3 className="text-xl font-semibold mb-4">Top Doctors for {selectedDisease?.name}</h3> */}
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center flex-wrap gap-6">
                             {filteredDoctors.length > 0 ? (
                                 filteredDoctors.map((doctor) => (
                                     <div
                                         key={doctor.id}
-                                        className="p-4 border rounded-lg hover:shadow-lg transition-transform transform hover:scale-105 flex items-start space-x-4"
+                                        className="p-4 border rounded-lg hover:shadow-2xl transition-all hover:duration-300 duration-300 transform hover:scale-105 flex items-start space-x-4"
                                     >
                                         <Image
                                             src={doctor.imageUrl}
@@ -100,9 +110,9 @@ const OnlineConsultation = () => {
                                             <p className="text-gray-500">
                                                 Languages: {doctor.languages.join(", ")}
                                             </p>
-                                            <p className="text-gray-500">Availability: {doctor.availability}</p>
+                                            <p className="text-gray-500 mb-5">Availability: {doctor.availability}</p>
                                             <a href="/appointments/booking"
-                                                className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                                                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
                                             >
                                                 Book Appointment
                                             </a>
