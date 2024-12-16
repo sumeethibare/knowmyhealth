@@ -5,9 +5,9 @@ import YoungMale from '/public/images/doctors/youngmale.jpg'
 import MidMale from '/public/images/doctors/midmale.jpg'
 import OldMale from '/public/images/doctors/oldmale.jpg'
 
+import MidFemale from '/public/images/doctors/midfemale.jpg'
 import Female from '/public/images/doctors/female.jpg'
 import YoungFemale from '/public/images/doctors/youngfemale.jpg'
-import MidFemale from '/public/images/doctors/midfemale.jpg'
 
 
 export const doctors = [
