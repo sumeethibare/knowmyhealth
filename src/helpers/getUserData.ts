@@ -12,6 +12,7 @@ export async function getUserData() {
         given_name: user.given_name || undefined,
         family_name: user.family_name || undefined,
         picture: user.picture || undefined,
+        email: user.email || undefined,
       }
     : null;
 

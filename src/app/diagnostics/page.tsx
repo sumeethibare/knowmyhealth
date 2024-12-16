@@ -36,6 +36,19 @@ const DiagnosticsPage = () => {
     }
   };
 
+  // Disable background scroll when modal is open
+  useEffect(() => {
+    if (selectedTest) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+      document.body.style.overflow = ''; // Enable scrolling
+    }
+
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [selectedTest]);
+
   // Close the modal when clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -96,14 +109,14 @@ const DiagnosticsPage = () => {
         </div>
 
         {selectedTest && (
-           <div
-           id="modal"
-           className="fixed inset-0 bg-black bg-opacity-50 flex lg:items-center items-end lg:justify-end justify-center z-50 modal-anim"
-         >
-           <div
-             ref={modalRef}
-             className="bg-white p-6 rounded-none shadow-lg max-w-lg w-full lg:h-screen lg:w-4/12 lg:right-0 lg:top-0 lg:justify-between lg:flex lg:flex-col"
-           >
+          <div
+            id="modal"
+            className="fixed inset-0 bg-black bg-opacity-50 flex lg:items-center items-end lg:justify-end justify-center z-50 modal-anim"
+          >
+            <div
+              ref={modalRef}
+              className="bg-white p-6 rounded-none shadow-lg max-w-lg w-full lg:h-screen lg:w-4/12 lg:right-0 lg:top-0 lg:justify-between lg:flex lg:flex-col"
+            >
               <div className="flex flex-col md:flex-row gap-4">
                 <Image
                   src={selectedTest.image}
@@ -117,23 +130,44 @@ const DiagnosticsPage = () => {
                   <p className="mt-2 text-gray-600">{selectedTest.address}</p>
 
                   <div className="mt-4">
-                    <select
-                      className="select select-bordered w-full"
-                      value={selectedPrice}
-                      onChange={(e) => setSelectedPrice(e.target.value)}
-                    >
-                      <option disabled selected>
-                        Select Price Option
-                      </option>
-                      {Object.entries(selectedTest.priceList).map(([label, price]) => (
-                        <option key={label} value={price}>
-                          {label} - ₹{price}
-                        </option>
-                      ))}
-                    </select>
+                    <p className="py-2">Select Test</p>
+                    <div className="dropdown">
+                      <div
+                        tabIndex={0}
+                        role="button"
+                        className="btn m-1"
+                      >
+                        {selectedPrice
+                          ? Object.keys(selectedTest.priceList).find(
+                              (key) =>
+                                selectedTest.priceList[key].toString() ===
+                                selectedPrice.toString()
+                            ) + ` - ₹${selectedPrice}`
+                          : 'Select Type Of Test'}
+                      </div>
+                      <ul
+                        tabIndex={0}
+                        className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow overflow-y-scroll" // Enables dropdown scrolling
+                      >
+                        {Object.entries(selectedTest.priceList).map(
+                          ([label, price]) => (
+                            <li
+                              key={label}
+                              onClick={() => setSelectedPrice(price)}
+                              className="cursor-pointer"
+                            >
+                              <a>
+                                {label} - ₹{price}
+                              </a>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
                   </div>
 
                   <div className="mt-4">
+                    <p className="py-2">Select Date for {selectedTest.name}</p>
                     <input
                       type="date"
                       className="input input-bordered w-full"
@@ -143,19 +177,20 @@ const DiagnosticsPage = () => {
                   </div>
                 </div>
               </div>
-              <button
-                className="mt-4 btn btn-primary w-full"
-                onClick={handleBooking}
-                disabled={!selectedPrice || !selectedDate} // Disable button if no price or date selected
-              >
-                Book Now
-              </button>
-              <button
-                className="mt-2 btn btn-outline w-full"
-                onClick={() => setSelectedTest(null)}
-              >
-                Cancel
-              </button>
+              <div>
+                <button
+                  className="mt-4 btn btn-primary w-full"
+                  onClick={handleBooking}
+                >
+                  Book Now
+                </button>
+                <button
+                  className="mt-2 btn btn-outline w-full"
+                  onClick={() => setSelectedTest(null)}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           </div>
         )}

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
+import One from "/public/images/doctors/balakrishna shetty.jpg";
 import I1 from "/public/images/homeimage.png";
 import I2 from "/public/images/docone.png";
 import I3 from "/public/images/doctwo.png";
@@ -15,53 +16,52 @@ const Impress = () => {
     const users = [
         {
             id: 1,
-            name: "Leslie Alexander",
-            email: "leslie.alexander@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+            name: "Dr Balakrishna Shetty", 
+            email: "balakrishna.shetty@kmy.com",
+            image:One,
         },
-        {
-            id: 2,
-            name: "Rose Francis",
-            email: "rose.francis@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-            id: 3,
-            name: "Kate Bishop",
-            email: "kate.bishop@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-            id: 2,
-            name: "Rose Francis",
-            email: "rose.francis@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-            id: 3,
-            name: "Kate Bishop",
-            email: "kate.bishop@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-            id: 2,
-            name: "Rose Francis",
-            email: "rose.francis@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-            id: 3,
-            name: "Kate Bishop",
-            email: "kate.bishop@kmy.com",
-            image:
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
+        // {
+        //     id: 2,
+        //     name: "Rose Francis",
+        //     email: "rose.francis@kmy.com",
+        //     image:
+        //         "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        // },
+        // {
+        //     id: 3,
+        //     name: "Kate Bishop",
+        //     email: "kate.bishop@kmy.com",
+        //     image:
+        //         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        // },
+        // {
+        //     id: 2,
+        //     name: "Rose Francis",
+        //     email: "rose.francis@kmy.com",
+        //     image:
+        //         "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        // },
+        // {
+        //     id: 3,
+        //     name: "Kate Bishop",
+        //     email: "kate.bishop@kmy.com",
+        //     image:
+        //         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        // },
+        // {
+        //     id: 2,
+        //     name: "Rose Francis",
+        //     email: "rose.francis@kmy.com",
+        //     image:
+        //         "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        // },
+        // {
+        //     id: 1,
+        //     name: "Leslie Alexander",
+        //     email: "leslie.alexander@kmy.com",
+        //     image:
+        //         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        // },
     ];
 
     // Automatic carousel effect
@@ -104,7 +104,7 @@ const Impress = () => {
                                     className="flex justify-between gap-x-6 py-5"
                                 >
                                     <div className="flex min-w-0 gap-x-4">
-                                        <img
+                                        <Image
                                             className="h-12 w-12 flex-none rounded-full bg-gray-50"
                                             src={user.image}
                                             alt={user.name}
