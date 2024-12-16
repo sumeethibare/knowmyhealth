@@ -1,14 +1,13 @@
 import Balakrishna from '/public/images/doctors/balakrishna shetty.jpg'
 
-import Male from '/public/images/doctors/male.jpg'
-import YoungMale from '/public/images/doctors/youngmale.jpg'
-import MidMale from '/public/images/doctors/midmale.jpg'
-import OldMale from '/public/images/doctors/oldmale.jpg'
+import Male from '/public/images/doctors/m.jpg'
+import YoungMale from '/public/images/doctors/ym.jpg'
+import MidMale from '/public/images/doctors/mm.jpg'
+import OldMale from '/public/images/doctors/om.jpg'
 
-import MidFemale from '/public/images/doctors/midfemale.jpg'
-import Female from '/public/images/doctors/female.jpg'
-import YoungFemale from '/public/images/doctors/youngfemale.jpg'
-
+import Female from '/public/images/doctors/f.jpg'
+import YoungFemale from '/public/images/doctors/yf.jpg'
+import MidFemale from '/public/images/doctors/mf.jpg'
 
 export const doctors = [
     // Diabetes Specialists
