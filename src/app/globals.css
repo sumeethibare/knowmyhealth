@@ -7,6 +7,10 @@
     scrollbar-width: none; 
 }
 
+.card-hover-animation{
+  @apply hover:shadow-2xl hover:shadow-zinc-200 hover:duration-300 duration-300 transition-all border lg:hover:scale-105 border-zinc-200 cursor-pointer
+}
+
 @keyframes slideInX {
     0% {
       opacity: 0;
@@ -39,3 +43,18 @@
     }
   }
   
+  .text-selection-none {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  }
+  
+  .noscrollbar {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .noscrollbar::-webkit-scrollbar {
+    display: none;
+  }

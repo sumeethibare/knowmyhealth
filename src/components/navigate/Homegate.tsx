@@ -20,7 +20,7 @@ function Homegate() {
             key={index}
             className="flex-shrink-0 py-3 px-2 flex flex-col items-center text-center"
           >
-            <a href={item.href} className="flex flex-col justify-center text-center items-center lg:hover:px-4 lg:hover:scale-110 hover:duration-500 duration-700 transition-all hover:skew-x-1">
+            <a href={item.href} className="flex flex-col justify-center text-center items-center lg:hover:px-4 lg:hover:scale-105 hover:duration-300 duration-300 transition-all">
               <Image src={item.image} alt={item.label} width={40} height={40} />
               <span className="mt-2 text-xs">{item.label}</span>
             </a>

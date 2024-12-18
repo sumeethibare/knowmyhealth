@@ -21,3 +21,15 @@
  7. Added fixed Online & Offline Consultation for Doctors
 
  8. Added Backend for MailTracker using mailchimp & Others
+
+ #### Wednesday, 18th December 2024
+
+ 1. Removed the diagnostics page content and replaced it with the nextjs dynamic page routing system
+
+ 2. Improved the diagnostics page UI
+
+ 3. added the data folder where all different data are now stored in one place
+
+ 4. modified the footer component
+
+ 5. improved the navigation bar component

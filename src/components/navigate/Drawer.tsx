@@ -31,14 +31,11 @@ export default function Drawer({ user }: DrawerProps) {
     const menuItems: MenuItem[] = [
         { label: 'Home', href: '/' },
         { label: 'Profile', href: '/profile' },
-        // { label: 'Fingertips', href: '/fingertips' },
-        // { label: 'Health Plans', href: '/health' },
         { label: 'Log Out', isLogout: true },
     ];
 
     return (
         <div className="drawer drawer-end">
-            {/* Avatar button to toggle drawer */}
             <div
                 onClick={toggleDrawer}
                 role="button"
@@ -56,26 +53,20 @@ export default function Drawer({ user }: DrawerProps) {
                             height={40}
                         />
                     ) : (
-                        <div className="avatar flex items-center justify-center bg-gray-200 text-black font-bold">
+                        <div className="avatar flex items-center justify-center bg-zinc-100 text-black font-bold">
                             {`${givenName[0] || ''}${familyName[0] || ''}`.toUpperCase()}
                         </div>
                     )}
                 </div>
             </div>
 
-            {/* Drawer content */}
             <div
-                className={`fixed inset-0 z-50 transition-all duration-300 ease-in-out ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-                    }`}
-            >
-                {/* Overlay */}
+                className={`fixed inset-0 z-50 transition-all duration-300 ease-in-out ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
                 <div
                     className="absolute inset-0 bg-black opacity-50"
                     onClick={closeDrawer}
                     aria-hidden="true"
                 ></div>
-
-                {/* Drawer panel */}
                 <div
                     className={`absolute right-0 top-0 h-full lg:w-80 w-full bg-base-100 text-zinc-800 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
                         }`}
@@ -83,12 +74,10 @@ export default function Drawer({ user }: DrawerProps) {
                     aria-modal="true"
                 >
                     <div onClick={closeDrawer} className="flex flex-col h-full">
-                        {/* Header with user info */}
-                        <div className="p-4 bg-zinc-100 text-zinc-500">
-                            <p className="text-2xl font-semibold">{`${givenName} ${familyName}`}</p>
+                        <div className="p-4 bg-zinc-100 text-zinc-800">
+                            <p className="text-2xl font-">{`${givenName} ${familyName}`}</p>
                         </div>
 
-                        {/* Menu items */}
                         <ul className="menu space-y-2 text-xl tracking-tight p-4">
                             {menuItems.map((item, index) => (
                                 <li key={index}>
@@ -113,13 +102,6 @@ export default function Drawer({ user }: DrawerProps) {
                                 </li>
                             ))}
                         </ul>
-
-                        <button
-                            onClick={closeDrawer}
-                            className="mt-auto mb-4 btn btn-ghost"
-                        >
-                            Close
-                        </button>
                     </div>
                 </div>
             </div>

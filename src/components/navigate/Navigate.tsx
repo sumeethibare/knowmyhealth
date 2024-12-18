@@ -6,13 +6,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Drawer from "./Drawer";
 import Logo from '/public/images/logo.png'
 import Image from "next/image";
-import { MagnifyingGlassIcon, MapPinIcon } from '@heroicons/react/24/outline';
-
-const mainmenus = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import { MagnifyingGlassIcon, MapIcon } from '@heroicons/react/24/solid';
 
 export default async function Navigate() {
   const { isAuthenticated, getUser } = getKindeServerSession();
@@ -27,45 +21,21 @@ export default async function Navigate() {
     : null;
 
   return (
-    <nav className="flex items-center justify-between lg:p-6 px-3">
+    <nav className="flex items-center justify-between px-2 bg-zinc-100 lg:bg-transparent">
 
       <div className="flex items-center lg:flex-row flex-col">
-        <a href="/"><Image src={Logo} width={1000} height={1000} className="lg:h-36 h-24 w-auto" alt="know my health" /></a>
-        <p className="text-xs lg:text-lg">Know My Health</p>
+        <a href="/" className="flex items-center justify-center tracking-tight">
+          <Image src={Logo} width={1000} height={1000} className="lg:h-28 h-20 w-auto" alt="Know My Health" />
+          <span className="text-md">knowmyhealth.in</span>
+        </a>
       </div>
 
-      {/* the desktop code */}
-      <div className=' gap-4 lg:flex hidden flex-wrap bg-zinc-100 lg:p-2 rounded-2xl'>
-        <label className="input input-bordered rounded-xl flex items-center gap-2">
-          <MapPinIcon className='size-4' />
-          <input type="text" className="grow" placeholder="banglore" disabled />
+      <div className='lg:flex hidden flex-wrap bg-zinc-50 lg:p-1'>
+        <label className="input input-bordered flex items-center gap-2">
+          <MapIcon className='size-4' />
+          <input type="text" className="grow" placeholder="Bengaluru" disabled />
         </label>
-
-        <label className="input input-bordered rounded-xl flex items-center gap-2">
-          <MagnifyingGlassIcon className='size-4' />
-          <input type="text" className="grow" placeholder="Search" />
-        </label>
-      </div>
-
-      {/* the mobile code */}
-      <div className=' gap-4 lg:hidden flex flex-wrap p-2 rounded-2xl'>
-
-        <MapPinIcon className='size-6 m-4' />
-
-        {/* The button to open modal */}
-        <label htmlFor="searchbox"> <MagnifyingGlassIcon className='size-6 m-4' /></label>
-
-        {/* Put this part before </body> tag */}
-        <input type="checkbox" id="searchbox" className="modal-toggle" />
-        <div className="modal backdrop-blur-xl backdrop-brightness-50" role="dialog">
-          <div className="modal-box bg-transparent rounded-full">
-            <label className="input input-bordered rounded-full flex items-center gap-2 input-lg">
-              <MagnifyingGlassIcon className='size-4' />
-              <input type="text" className="grow" placeholder="Search anything" />
-            </label>
-          </div>
-          <label className="modal-backdrop" htmlFor="searchbox">Close</label>
-        </div>
+        <label className="input hover:bg-zinc-950 bg-transparent hover:text-white text-zinc-950 transition-all duration-300 flex items-center gap-2" htmlFor="searchbox"> <MagnifyingGlassIcon className='size-4' /></label>
       </div>
 
       <div>
@@ -76,6 +46,15 @@ export default async function Navigate() {
         ) : (
           <Drawer user={safeUser} />
         )}
+      </div>
+
+      <input type="checkbox" id="searchbox" className="modal-toggle" />
+      <div className="modal backdrop-blur-md" role="dialog">
+        <label className="input modal-box rounded-none flex items-center gap-2 input-lg">
+          <MagnifyingGlassIcon className='size-4' />
+          <input type="text" className="grow" placeholder="Search anything" />
+        </label>
+        <label className="modal-backdrop" htmlFor="searchbox">Close</label>
       </div>
     </nav>
   );
