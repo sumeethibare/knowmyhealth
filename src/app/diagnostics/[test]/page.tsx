@@ -40,7 +40,7 @@ const TestDetails = () => {
               <h3 className="text-lg card-title">{testName}</h3>
               <p className="text-zinc-500">₹{price}</p>
               <div className="card-actions justify-end">
-                <a href='https://razorpay.me/@knowmyhealth' className='btn btn-sm'>book test</a>
+                <a href='/payment' className='btn btn-sm'>book test</a>
               </div>
             </div>
           ))}
