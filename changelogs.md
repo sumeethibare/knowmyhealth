@@ -33,3 +33,11 @@
  4. modified the footer component
 
  5. improved the navigation bar component
+
+ #### Wednesday, 18th December 2024
+
+ 1. Removed the existing booking system with the new one
+
+ 2. fixed the payments system
+
+ 3. added dynamic routing for the testing page
