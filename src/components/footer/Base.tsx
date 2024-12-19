@@ -123,7 +123,7 @@ const Base = () => {
           <div className="mt-16 border-t border-zinc-400/30 pt-8 sm:mt-20 lg:mt-24">
             <div className="text-md text-center text-black">
               Copyright © 2024. Designed & Developed By
-              <a rel="noopener" href="https://plyronest.com"> Plyronest.</a>
+              <a rel="noopener" href="/"> Team Knowmyhealth.</a>
             </div>
           </div>
         </div>
