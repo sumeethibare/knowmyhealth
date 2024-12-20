@@ -10,5 +10,6 @@ export const diseases = [
     { id: 3, name: "Asthma Specialist", description: "Breathing problems and asthma management.", image: Asthma },
     { id: 4, name: "Skin Issues Specialist", description: "Treat skin-related problems.",  image: Skin },
     { id: 5, name: "Cancer Specialist", description: "Cancer treatment and consultation.", image: Cancer },
+{ id: 5, name: "Radiology Specialist", description: "Manage your scans.", image: Diabetes },
   ];
   
