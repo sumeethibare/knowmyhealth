@@ -48,7 +48,7 @@ const OnlineConsultation = () => {
                 {diseases.map((disease) => (
                     <div
                         key={disease.id}
-                        className="rounded-none shadow-lg p-4 text-center cursor-pointer hover:shadow-xl transition-all transform lg:hover:scale-110"
+                        className="rounded-none border border-zinc-200 p-4 text-center cursor-pointer hover:shadow-2xl hover:duration-300 duration-300 transition-all transform lg:hover:scale-110"
                         onClick={() => openModal(disease)}
                     >
                         <div className="w-full h-48 overflow-hidden">
@@ -66,8 +66,6 @@ const OnlineConsultation = () => {
                 ))}
             </div>
 
-
-            {/* Modal */}
             <dialog id="option_enabled" className="modal">
                 <div className="modal-box w-full h-full max-w-full max-h-full flex lg:flex-row flex-col">
                     <button
@@ -78,7 +76,6 @@ const OnlineConsultation = () => {
                     </button>
 
                     <div>
-                        {/* Modal Content */}
                         <h2 className="text-3xl font-semibold text-gray-800 mb-4">{selectedDisease?.name}</h2>
                         <p className="mb-6 text-gray-600">{selectedDisease?.description}</p>
 
@@ -88,7 +85,7 @@ const OnlineConsultation = () => {
                                 filteredDoctors.map((doctor) => (
                                     <div
                                         key={doctor.id}
-                                        className="p-4 border rounded-lg hover:shadow-2xl transition-all hover:duration-300 duration-300 transform hover:scale-105 flex items-start space-x-4"
+                                        className="p-4 border rounded-none hover:shadow-2xl transition-all hover:duration-300 duration-300 transform hover:scale-105 flex items-start space-x-4"
                                     >
                                         <Image
                                             src={doctor.imageUrl}
@@ -112,7 +109,7 @@ const OnlineConsultation = () => {
                                             </p>
                                             <p className="text-gray-500 mb-5">Availability: {doctor.availability}</p>
                                             <a href="/appointments/booking"
-                                                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                                                className="px-4 py-2 bg-blue-900 text-white rounded-none btn hover:btn-primary"
                                             >
                                                 Book Appointment
                                             </a>

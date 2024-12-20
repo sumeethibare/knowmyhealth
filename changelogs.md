@@ -22,6 +22,7 @@
 
  8. Added Backend for MailTracker using mailchimp & Others
 
+ 
  #### Wednesday, 18th December 2024
 
  1. Removed the diagnostics page content and replaced it with the nextjs dynamic page routing system
@@ -34,6 +35,7 @@
 
  5. improved the navigation bar component
 
+ 
  #### Wednesday, 18th December 2024
 
  1. Removed the existing booking system with the new one
@@ -41,3 +43,18 @@
  2. fixed the payments system
 
  3. added dynamic routing for the testing page
+
+
+#### Friday, 20th December 2024
+
+ 1. added the razorpay payment system for payments of diagnostics & lab tests
+
+ 2. implemented backend for the razorpay payment system
+
+ 3. fixed other issues related to the system
+
+ 4. Note: the payment system is still in testing phase and will not allow to do payments yet, but pricing will be always updated
+
+ 5. Added the radiology card to the consultation page of the doctors also updated the doctors data
+
+ 6. removed the plyronest branding from the footer

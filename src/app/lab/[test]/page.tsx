@@ -16,10 +16,14 @@ const LabTestDetails = () => {
 
   return (
     <>
-    <Homegate/>
+      <Homegate />
       <div className="container mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-4">{selectedTest.name}</h1>
-        <p className="text-gray-600 mb-4">{selectedTest.address}</p>
+        <h1 className="text-4xl font-semibold mb-4">{selectedTest.name}</h1>
+
+        <select className="select w-full max-w-xs my-4">
+          <option disabled selected>{selectedTest.address}</option>
+        </select>
+
         <div className='h-1/4 lg:w-1/4 '>
           <Image
             src={selectedTest.image}
@@ -30,13 +34,13 @@ const LabTestDetails = () => {
           />
         </div>
         <h2 className="text-2xl font-medium mb-4 p-4">Choose The Test</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {Object.entries(selectedTest.priceList).map(([testName, price]) => (
-            <div key={testName} className="bg-zinc-50 card-body p-4 card-hover-animation">
+            <div key={testName} className="bg-zinc-50 card-body p-4 card-hover-animation h-48 group hover:bg-sky-700 hover:text-stone-50">
               <h3 className="text-lg font-medium">{testName}</h3>
-              <p className="text-gray-500">₹{price}</p>
+              <p>₹{price}</p>
               <div className="card-actions justify-end">
-                <a href='/payment' className='btn btn-sm'>book test</a>
+                <a href={`/payment?testName=${encodeURIComponent(testName)}&price=${price}`} className='btn'>book test</a>
               </div>
             </div>
           ))}
