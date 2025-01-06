@@ -28,7 +28,10 @@ export const tests: DiagnosticTest[] = [
       'MR PERIPHERAL ANGIO (VENOUS PHASE)': 14000,
       'MRI WHOLE SPINE SCREENING': 15500,
       'MR PET WHOLE BODY': 25000,
-      'MRI CONTRAST': 3000
+      'MRI CONTRAST': 3000,
+      'MRI ANY ONE REGION': 7250,
+      'MRI WHOLE BODY': 25550,
+      'MRI WHOLE SPINE': 15500
     }
   },
   {
@@ -67,7 +70,12 @@ export const tests: DiagnosticTest[] = [
       'U/S GUIDED STUDY': 3500,
       'DOPPLER EACH REGION': 2750,
       'CAROTID DOPPLER': 2750,
-      'ECHO': 1500
+      'ECHO': 1500,
+      'USG 1 REGION':1750,
+      'DOPPLER': 1500,
+      'PREGNANCY': 2500,
+      'PREGNANCY AFTER 16th WEEK': 4500,
+      'ULTRASOUND 3D': 3500
     }
   },
   {
