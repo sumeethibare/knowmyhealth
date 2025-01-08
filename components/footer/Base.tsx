@@ -13,12 +13,12 @@ const menuData = {
     { title: 'Privacy Policy', href: '/privacy-policy' },
     { title: 'Terms of Service', href: '/terms-of-service' },
   ],
-  company: [
-    { title: 'About Us', href: '/about-us' },
-    { title: 'Careers', href: '/careers' },
-    { title: 'Our Story', href: '/our-story' },
-    { title: 'Contact Us', href: '/contact-us' },
-  ],
+  // company: [
+  //   { title: 'About Us', href: '/about-us' },
+  //   { title: 'Careers', href: '/careers' },
+  //   { title: 'Our Story', href: '/our-story' },
+  //   { title: 'Contact Us', href: '/contact-us' },
+  // ],
 };
 
 const Base = () => {
@@ -98,7 +98,7 @@ const Base = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-10 md:mt-0">
+                {/* <div className="mt-10 md:mt-0">
                   <h3 className="text-md font-semibold leading-6 text-black">Company</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {menuData.company.map((item) => (
@@ -112,7 +112,7 @@ const Base = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
