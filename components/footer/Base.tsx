@@ -2,18 +2,14 @@ import React from 'react';
 
 const menuData = {
   solutions: [
-    { title: 'Wellness', href: '/wellness' },
     { title: 'Appointments', href: '/appointments' },
     { title: 'Consultation', href: '/consultation' },
     { title: 'Diagnostics', href: '/diagnostics' },
   ],
   social: [
-    { title: 'Instagram', href: 'https://instagram.com' },
-    { title: 'Linkedin', href: 'https://linkedin.com' },
-    { title: 'Facebook', href: 'https://facebook.com' },
+    { title: 'Instagram', href: 'https://www.instagram.com/know_my_health' },
   ],
   resources: [
-    { title: "FAQ's", href: '/faqs' },
     { title: 'Privacy Policy', href: '/privacy-policy' },
     { title: 'Terms of Service', href: '/terms-of-service' },
   ],
